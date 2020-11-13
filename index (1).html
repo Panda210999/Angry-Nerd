@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg">
+    <nav>
+        <h1>DogBuddy.co</h1>
+        <button class="signin">Sign In</button>
+    </nav>
+    <main>
+        <h1 class="headingfont">
+            Adopt, Love, Care
+        </h1>
+        <div id="links">
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+            <a href="#"><i class="ri-twitter-fill"></i></a>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+        </div>
+    </main>
+</div>
+    
+    
+<div class="parallax"></div>
+
+
+
+<div id="bg2">
+
+    <div id="content">
+        <div id="elems">
+            <div class="block">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <h5 style="color: black; font-size: 20px; letter-spacing: 1px;"><b>Adopt</b></h5>
+            </div>
+            <div class="block">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <h5 style="font-size: 20px; letter-spacing: 1px;"><b>Sell</b></h5>
+            </div>
+            <div class="block">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <h5 style="color: black; font-size: 20px; letter-spacing: 1px;"><b>Rent</b></h5>
+            </div>
+            <div class="block">
+                <div class="img">
+                    <img src="" alt="">
+                </div>
+                <h5 style="font-size: 20px; letter-spacing: 1px;"><b>Contact Us</b></h5>
+            </div>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit aut, aspernatur vero odit animi eaque quas sed iure quisquam velit inventore ducimus molestias doloremque laudantium sapiente explicabo ex. Laboriosam magnam at quod, voluptatum unde quibusdam.</p>
+    </div>
+
+</div>
+<div class="parallax"></div>
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js" integrity="sha512-wK2NuxEyN/6s53M8G7c6cRUXvkeV8Uh5duYS06pAdLq4ukc72errSIyyGQGYtzWEzvVGzGSWg8l79e0VkTJYPw==" crossorigin="anonymous"></script>
+<script>
+    gsap.fromTo('nav h1',{y:-90},{duration:1,ease:Power3.easeInOut,y:0});
+    gsap.fromTo('nav button',{y:-90},{duration:1,ease:Power3.easeInOut,y:0});
+    gsap.fromTo('main h1',{opacity:0},{delay:.5,duration:2,ease:Power3.easeInOut,opacity:1});
+
+    gsap.from('#links a',{stagger:.3,opacity:0,delay:1,duration:1.2,ease:'expo.inOut'});
+    
+const tl2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: "#content",
+        start: "top center",
+        toggleActions: 'play pause resume reverse'
+    }
+});
+
+tl2.from('.block', {
+    stagger: .3,
+    opacity: 0,
+    delay: .1,
+    duration: 1,
+    ease: 'Expo.easeInOut'
+})
+.from('.block .img', {
+    stagger: .1,
+    opacity: 0,
+    duration: 1.5,
+    ease: 'Expo.easeInOut'
+})
+.from('#content p', {
+    y: 10,
+    opacity: 0,
+    duration: 1.5,
+    ease: 'Expo.easeInOut'
+})
+</script>
+</body>
+</html>
